@@ -1,6 +1,6 @@
-import urllib, htmllib, formatter
+import urllib, http, formatter
 
-website = urllib.urlopen("http://www.profmcmillan.com")
+website = urllib.URLOpener("http://www.profmcmillan.com")
 data = website.read()
 website.close()
 format = formatter.AbstractFormatter(formatter.NullWriter)
