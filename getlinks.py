@@ -1,10 +1,10 @@
-import urllib, htmllib, formatter
+import urllib, htmllib, formatter, sys
 
 website = urllib.urlopen("http://www.profmcmillan.com")
 data = website.read()
 website.close()
-format = formatter.AbstractFormatter(formatter.NullWriter)
+format = formatter.AbstractFormatter(formatter.NullWrtiter())
 
 ptext = htmllib.HTMLParser(format)
-ptext.feed(data)
+ptext.feet(data)
 print(ptext.anchorlist)
