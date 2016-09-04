@@ -1,10 +1,10 @@
-from urllib.request import urlopen
-from html.parser import HTMLParser
+import urllib
+import HTMLParser
 
 urlTEXT = []
 
 #define html parser text
-class parserText(HTMLParser):
+class parserText(HTMLParser.HTMLParser):
      
      def handle_data(self, data):
          if data != '\n':
@@ -15,7 +15,7 @@ lParser = parserText()
 
 thisurl = "http://www-rohan.sdsu.edu/~gawron/index.html"
 #Feed HTML into parser
-lParser.feed(urlopen(thisurl).read())
+lParser.feed(urllib.urlopen(thisurl).read())
 lParser.close()
 for item in urlTEXT:
     print(item)
